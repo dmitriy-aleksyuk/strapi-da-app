@@ -1,0 +1,106 @@
+*~
+.svn
+.cvs
+*.bak
+*.swp
+
+# deploy
+/clean_home.sh
+/deploy.sh
+clean_home.sh
+deploy.sh
+*clean_home.sh
+*deploy.sh
+
+# Ignore node dependency directories.
+**/node_modules/
+
+# Sitemap files.
+/sitemap.xml
+/sitemap.xml.gz
+
+#robots.txt
+#/robots.txt
+
+# Netbeans
+/nbproject/private/
+nbproject
+
+# visual studio code
+.vscode/*
+
+# WebStorm / PhpStorm
+.idea/*
+.idea
+
+# Env
+#/.htaccess
+.htaccess
+.gitkeep
+#nginx.conf
+*.css.map
+*.js.map
+node_modules
+debug.log
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# large/disallowed file types
+# a CDN should be used for these
+#
+*.hqx
+*.bin
+*.exe
+*.dll
+*.deb
+*.dmg
+*.iso
+*.img
+*.mid
+*.midi
+*.kar
+*.mp3
+*.ogg
+*.m4a
+*.ra
+*.3gpp
+*.3gp
+#*.mp4
+#*.mpeg
+#*.mpg
+#*.mov
+#*.webm
+*.flv
+*.m4v
+*.mng
+*.asx
+*.asf
+*.wmv
+*.avi

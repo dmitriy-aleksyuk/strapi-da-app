@@ -7,13 +7,13 @@ import { notFound } from "next/navigation";
 async function loader() {
   const data = await getHomePage();
   if (!data) notFound();
-  console.log(data);
+  //console.log(data);
   return { ...data.data };
 }
 export default async function HomeRoute() {
   const data = await loader();
   const blocks = data?.blocks || [];
-  console.log(blocks);
+  //console.log(blocks);
   // return (
   //   <div>
   //     {/* <h1>{data.top_title}</h1>

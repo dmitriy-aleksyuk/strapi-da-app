@@ -3,12 +3,11 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface BlocksHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_hero_sections';
   info: {
+    description: '';
     displayName: 'Hero section';
   };
   attributes: {
-    bannerImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    backgroundImage: Schema.Attribute.Media<'images'>;
     cta: Schema.Attribute.Component<'elements.link', false>;
     heading: Schema.Attribute.String;
     logo: Schema.Attribute.Component<'elements.logo', false>;
@@ -19,15 +18,16 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
 export interface BlocksInfoPart extends Struct.ComponentSchema {
   collectionName: 'components_blocks_info_parts';
   info: {
+    description: '';
     displayName: 'Info part';
   };
   attributes: {
     contentEditor: Schema.Attribute.RichText;
     cta: Schema.Attribute.Component<'elements.link', false>;
     headLine: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images', true>;
+    image: Schema.Attribute.Media<'images'>;
     reverse: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    theme: Schema.Attribute.Enumeration<['green orangs']>;
+    theme: Schema.Attribute.Enumeration<['green ', 'orange']>;
   };
 }
 
@@ -46,10 +46,11 @@ export interface ElementsLink extends Struct.ComponentSchema {
 export interface ElementsLogo extends Struct.ComponentSchema {
   collectionName: 'components_elements_logos';
   info: {
+    description: '';
     displayName: 'Logo';
   };
   attributes: {
-    logoImage: Schema.Attribute.Media<'images', true>;
+    logoImage: Schema.Attribute.Media<'images'>;
     logoText: Schema.Attribute.String;
   };
 }

@@ -1,7 +1,8 @@
 {
   "collectionName": "components_blocks_hero_sections",
   "info": {
-    "displayName": "Hero section"
+    "displayName": "Hero section",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,15 +11,13 @@
       "repeatable": false,
       "component": "elements.logo"
     },
-    "bannerImage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
+    "backgroundImage": {
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "heading": {
       "type": "string"

@@ -19,8 +19,8 @@ import { BlockRenderer } from "@/components/BlockRenderer";
 
 async function loader(slug: string) {
   const { data } = await getPageBySlug(slug);
-  console.log('++++++');
-  console.log(data);
+  //console.log('++++++');
+  //console.log(data);
   if (data.length === 0) notFound();
   return { blocks: data[0]?.blocks || [] };
 }

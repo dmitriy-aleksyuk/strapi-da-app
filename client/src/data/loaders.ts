@@ -103,3 +103,45 @@ export async function getPageBySlug(slug: string) {
   url.search = pageBySlugQuery(slug);
   return await fetchAPI(url.href, { method: "GET" });
 }
+
+const globalSettingQuery = qs.stringify({
+  populate: {
+    header: {
+      populate: {
+        headerLogo: {
+          populate: {
+            logoImage: {
+              fields: ["url", "alternativeText"],
+            },
+          },
+        },
+        headerNavigation: true,
+        headerCta: true,
+      },
+    },
+    footer: {
+      populate: {
+        footerLogo: {
+          populate: {
+            logoImage: {
+              fields: ["url", "alternativeText"],
+            },
+          },
+        },
+        footerNavigation: true,
+        footerPolicies: true,
+      },
+    },
+  },
+});
+
+/**
+ * Fetches global settings from Strapi.
+ * @returns {Promise<any>} The global settings data.
+ */
+export async function getGlobalSettings() {
+  const path = "/api/global";
+  const url = new URL(path, BASE_URL);
+  url.search = globalSettingQuery;
+  return fetchAPI(url.href, { method: "GET" });
+}

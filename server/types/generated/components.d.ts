@@ -1,5 +1,19 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksFeaturedArticle extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_articles';
+  info: {
+    description: '';
+    displayName: 'Featured Article';
+  };
+  attributes: {
+    featureContent: Schema.Attribute.RichText;
+    featureImage: Schema.Attribute.Media<'images'>;
+    featureLink: Schema.Attribute.Component<'elements.link', false>;
+    featureTitle: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_hero_sections';
   info: {
@@ -28,6 +42,19 @@ export interface BlocksInfoPart extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'>;
     reverse: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     theme: Schema.Attribute.Enumeration<['green ', 'orange']>;
+  };
+}
+
+export interface BlocksSubscribe extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_subscribes';
+  info: {
+    displayName: 'Subscribe';
+  };
+  attributes: {
+    subscribeButton: Schema.Attribute.String;
+    subscribePlaceholder: Schema.Attribute.String;
+    subscribeText: Schema.Attribute.Text;
+    subscribeTitle: Schema.Attribute.String;
   };
 }
 
@@ -84,8 +111,10 @@ export interface LayoutHeader extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.featured-article': BlocksFeaturedArticle;
       'blocks.hero-section': BlocksHeroSection;
       'blocks.info-part': BlocksInfoPart;
+      'blocks.subscribe': BlocksSubscribe;
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
       'layout.footer': LayoutFooter;

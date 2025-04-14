@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_subscribes",
+  "info": {
+    "displayName": "Subscribe"
+  },
+  "options": {},
+  "attributes": {
+    "subscribeTitle": {
+      "type": "string"
+    },
+    "subscribeText": {
+      "type": "text"
+    },
+    "subscribePlaceholder": {
+      "type": "string"
+    },
+    "subscribeButton": {
+      "type": "string"
+    }
+  }
+}

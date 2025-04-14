@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_featured_articles",
+  "info": {
+    "displayName": "Featured Article",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "featureTitle": {
+      "type": "string"
+    },
+    "featureLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.link"
+    },
+    "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "featureContent": {
+      "type": "richtext"
+    }
+  }
+}
